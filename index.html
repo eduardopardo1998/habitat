@@ -1,19 +1,84 @@
-<script type="text/javascript">
-  (function(d, t) {
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asistente IA - Taller de Hábitat</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f4f4f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    header {
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 16px;
+    }
+
+    header h1 {
+      font-size: 1.4rem;
+      color: #1a1a1a;
+    }
+
+    header p {
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 4px;
+    }
+
+    #voiceflow-chat {
+      width: 100%;
+      max-width: 800px;
+      height: 75vh;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Asistente IA</h1>
+    <p>Resuelve tus dudas sobre el Taller de Hábitat.</p>
+  </header>
+
+  <div id="voiceflow-chat"></div>
+
+  <script type="text/javascript">
+    (function (d, t) {
       var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function() {
+      v.onload = function () {
         window.voiceflow.chat.load({
           verify: { projectID: '6a2e00b5bdd91b307d89c4e7' },
           url: 'https://general-runtime.voiceflow.com',
           voice: {
-            url: "https://runtime-api.voiceflow.com"
+            url: 'https://runtime-api.voiceflow.com'
           },
           render: {
             mode: 'embedded',
-            target: document.getElementById(...)
+            target: document.getElementById('voiceflow-chat')
           }
         });
-      }
-      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-  })(document, 'script');
-</script>
+      };
+      v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs";
+      v.type = "text/javascript";
+      s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
+
+</body>
+</html>
